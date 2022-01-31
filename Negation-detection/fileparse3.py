@@ -11,7 +11,7 @@ from nltk import sent_tokenize
 
 import os
 import os.path
-folder='/home/arif/Desktop/mycode/mycode3/SingleCases/SingleCases'
+folder='/home/arif/Desktop/mycode/mycode5/Haydon'
 
 count=0
 fileContents=[]
@@ -29,7 +29,8 @@ for filename in os.listdir(folder):
     #print(fileSequence)
     
     f=open(filepath, 'r')
-    fileText=f.read()
+    fileTextDummy=f.readline()
+    fileText=f.readline()
     fileTextStripped=fileText.strip()
     fileContents.append(fileTextStripped)
     #print(fileText)
@@ -43,10 +44,12 @@ for filename in os.listdir(folder):
 #     print("\n\n\n")
 # =============================================================================
 
-
-#print(fileSequence[514])
-#print(fileContents[514])    
-
+# =============================================================================
+# print("\n")
+# print(fileSequence[100])
+# print(fileContents[100])    
+# print("\n")
+# =============================================================================
 # =============================================================================
 # for i in range(len(fileSequence)):
 #     print(fileSequence[i])
@@ -62,7 +65,7 @@ for fileCount in range(len(fileSequence)):
 
     #print("***FILE COUNT: "+str(len(fileSequence))+"***")
     sentsList=[]
-    #sentsList[i] holds all the sentences of filrContents[i] or fileSequence[i].txt
+    #sentsList[i] holds all the sentences of fileContents[i] or fileSequence[i].txt
     #to get the sentences, use sentsList[i][0], sentsList[i][1], sentsList[i][2] etc.
     print("sent_tokenize-started")
     sentsList.append(sent_tokenize(unicode(fileContents[fileCount], errors='ignore')))
@@ -72,9 +75,9 @@ for fileCount in range(len(fileSequence)):
 
     
     
-    writeDir='/home/arif/Desktop/mycode/mycode3/SingleCasesN/New'
-    nameOfFile=os.path.join(writeDir, str(fileSequence[fileCount])+"N.txt")
-    writeFile=open(nameOfFile, "a")
+    writeDir='/home/arif/Desktop/mycode/mycode5/HaydonN'
+    nameOfFile=os.path.join(writeDir, "N"+str(fileSequence[fileCount])+".txt")
+    writeFile=open(nameOfFile, "w")
     #print(nameOfFile)
     
     # =============================================================================
@@ -95,7 +98,7 @@ for fileCount in range(len(fileSequence)):
                 print("JackPOT!")
                 writeFile.write("\r\nNEG SENTENCE:"+str(sentsList[0][sentenceCount])+"\r\n")
                 if(negFlag==0):
-                    writeFile.write(str(treeParsed)+"\r\n\r\n")
+                    #writeFile.write(str(treeParsed)+"\r\n\r\n")
                     negFlag=1
                 writeFile.write(str(str(posDep[i][0][0])+" ("+str(posDep[i][0][1])+") - "+str(posDep[i][1])+" - "+str(posDep[i][2][0])+" ("+str(posDep[i][2][1])+" )\r\n"))
                 
@@ -115,12 +118,12 @@ for fileCount in range(len(fileSequence)):
     writeFile.close()
     print("negDetector-passed") 
     
-    moveDirFrom='/home/arif/Desktop/mycode/mycode3/SingleCases/SingleCases'
+    moveDirFrom='/home/arif/Desktop/mycode/mycode5/Haydon'
     pathOfMovingFileFrom=os.path.join(moveDirFrom, str(fileSequence[fileCount])+".txt")
     
-    moveDirTo='/home/arif/Desktop/mycode/mycode3/SingleCases/Done/New'
+    moveDirTo='/home/arif/Desktop/mycode/mycode5/HaydonDone'
     pathOfMovingFileTO=os.path.join(moveDirTo, str(fileSequence[fileCount])+".txt")
     
     os.rename(pathOfMovingFileFrom,pathOfMovingFileTO)
 
-            
+           
