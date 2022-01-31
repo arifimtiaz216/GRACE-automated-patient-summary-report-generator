@@ -12,7 +12,7 @@ You need the following before you can run the system.
 5. Tkinter package
 
 
-Run Gui.py
+Run Gui2.py
 the GUI can take upto three files for summary report creation. These dummy files are narratives1, narratives2, narratives3 here. you can add from 1-3 files in the GUI.
 After adding them in GUI, click create summary. A pdf will be created. That pdf is the summary report.
 
