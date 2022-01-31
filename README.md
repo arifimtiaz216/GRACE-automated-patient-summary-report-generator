@@ -17,3 +17,6 @@ the GUI can take upto three files for summary report creation. These dummy files
 After adding them in GUI, click create summary. A pdf will be created. That pdf is the summary report.
 
 After that, press Quit.
+
+Cite this paper if you use our method-
+"Rahman, M. Arif, et al. "GRACE: Generating summary reports automatically for cognitive assistance in emergency response." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 34. No. 08. 2020."
