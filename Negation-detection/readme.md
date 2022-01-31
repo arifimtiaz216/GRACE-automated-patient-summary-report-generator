@@ -1,1 +1,1 @@
-stanford parser for NEG detection on contexts. Worked on forum data.
+stanford parser and NegEx for NEG detection on contexts.
